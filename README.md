@@ -4,10 +4,7 @@
 
 ```bash
 # Build container
-docker build -t registry.rmnad.net/uptime-endpoint:latest .
-
-# Push to container registry
-docker push registry.rmnad.net/uptime-endpoint:latest
+docker buildx build --platform linux/amd64,linux/arm64 -t registry.rmnad.net/uptime-endpoint:latest --push .
 
 # Then redeploy in portainer
 ```
